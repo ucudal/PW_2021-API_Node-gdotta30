@@ -1,0 +1,16 @@
+{
+  "name": "pw-2021-nodejs-api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "test": "mocha --exit"
+  },
+  "dependencies": {
+    "cookie": "^0.4.1",
+    "express": "4.17.1",
+    "mocha": "^9.1.3",
+    "nodemon": "2.0.14",
+    "supertest": "^6.1.6"
+  }
+}
