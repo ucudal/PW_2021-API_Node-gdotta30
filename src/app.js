@@ -20,7 +20,7 @@ const csvWriter = createCsvWriter({
 var app = express();
 
 var corsOptions = {
-  origin: 'http://localhost:4000',
+  origin: 'http://localhost:3000',
   optionsSuccessStatus: 200
 }
 
