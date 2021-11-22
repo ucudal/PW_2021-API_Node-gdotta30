@@ -8,6 +8,10 @@ const csvWriter = createCsvWriter({
   path: 'src/files/formularios.csv',
   header: [
     {id: 'nombreContacto', title: 'Nombre contacto'},
+    {id: 'email', title: 'Email'},
+    {id: 'edad', title: 'Edad'},
+    {id: 'departamento', title: 'Departamento'},
+    {id: 'consulta', title: 'Consulta'},
   ],
   append: true,
 });
