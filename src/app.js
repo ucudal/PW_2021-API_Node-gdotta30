@@ -16,12 +16,14 @@ const csvWriter = createCsvWriter({
   append: true,
 });
 
-
 var app = express();
 
 var corsOptions = {
   origin: 'http://localhost:3000',
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
+  methods: ['GET','POST'],
+  exposedHeaders: ['Set-Cookie'],
+  credentials: true,
 }
 
 app.use(cors(corsOptions));
@@ -56,8 +58,11 @@ app.post('/enviar-formulario', function(req, res) {
     newRecords.push(req.body)
     csvWriter.writeRecords(newRecords)
     .then(()=> {
-      res.cookie('PW_2021-CV_Contacto', req.body.nombreContacto, { maxAge: 900000, httpOnly: true });
-      res.send(JSON.stringify({ res: "Formulado enviado correctamente." }))
+      res.cookie('PW_2021-CV_Contacto', req.body.nombreContacto,
+      { sameSite: 'none', secure: true },
+      { maxAge: 900000, httpOnly: false });
+      
+      res.send("Formulado enviado correctamente.");
     }
     );
   }
