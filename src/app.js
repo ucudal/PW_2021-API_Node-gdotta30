@@ -19,7 +19,7 @@ const csvWriter = createCsvWriter({
 var app = express();
 
 var corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: ['http://localhost:3000', 'https://ucudal.github.io'],
   optionsSuccessStatus: 200,
   methods: ['GET','POST'],
   exposedHeaders: ['Set-Cookie'],
