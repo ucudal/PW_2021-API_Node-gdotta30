@@ -57,7 +57,7 @@ app.post('/enviar-formulario', function(req, res) {
     csvWriter.writeRecords(newRecords)
     .then(()=> {
       res.cookie('PW_2021-CV_Contacto', req.body.nombreContacto, { maxAge: 900000, httpOnly: true });
-      res.send("Formulado enviado correctamente.")
+      res.send(JSON.stringify({ res: "Formulado enviado correctamente." }))
     }
     );
   }
